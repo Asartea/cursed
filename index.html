@@ -8,15 +8,22 @@
     <title>Document</title>
 </head>
 <body>
-    <style>
-        :root { --text-content: "example"}        
+    <style data-variable-name="text-content-p1">
+        :root { --text-content-p1: "example"}        
+    </style>
+    <style data-variable-name="text-content-p2">
+        :root {--text-content-p2: "example"}
     </style>
     <style>
                 /* Base CSS: */
-        p:before {
-            content: var(--text-content);
+        p[data-element-name=p1]:before {
+            content: var(--text-content-p1);
+        }
+        p[data-element-name=p2]:before {
+            content: var(--text-content-p2)
         }
     </style>
-    <p></p>
+    <p data-element-name="p1"></p>
+    <p data-element-name="p2"></p>
 </body>
 </html>
